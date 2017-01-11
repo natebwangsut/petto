@@ -8,7 +8,7 @@ commands:
     description: Say hello to Petto
     usage: /petto
   pettoCreate:
-   description: Create a pet
+   description: Create a pet, leaving player blank default in the user of the command
    usage:
     /petto create [type] [player]
     e.g. /petto create wolf
