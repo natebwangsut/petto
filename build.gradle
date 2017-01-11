@@ -1,15 +1,35 @@
 plugins {
+    id 'maven'
     id 'jacoco'
+    id 'java'
     id 'com.github.kt3k.coveralls' version '2.6.3'
 }
-
-apply plugin: 'java'
-apply plugin: 'maven'
 
 group = 'me.thepooe'
 version = '0.0.1-SNAPSHOT'
 
 description = """Petto"""
+
+repositories {
+
+    maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
+    maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+    compile(group: 'org.spigotmc', name: 'spigot-api', version:'1.11.2-R0.1-SNAPSHOT') {
+        /* This dependency was originally in the Maven provided scope, but the project was not of type war.
+        This behavior is not yet supported by Gradle, so this dependency has been converted to a compile dependency.
+        Please review and delete this closure when resolved. */
+    }
+    compile(group: 'org.bukkit', name: 'bukkit', version:'1.11.2-R0.1-SNAPSHOT') {
+        /* This dependency was originally in the Maven provided scope, but the project was not of type war.
+        This behavior is not yet supported by Gradle, so this dependency has been converted to a compile dependency.
+        Please review and delete this closure when resolved. */
+    }
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.0.0-M3")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.0-M3")
+}
 
 sourceCompatibility = 1.5
 targetCompatibility = 1.5
@@ -18,31 +38,13 @@ tasks.withType(JavaCompile) {
 }
 
 jacoco {
-    toolVersion = "0.7.6.201602180812"
+    toolVersion = "0.7.8"
 }
 
 jacocoTestReport {
     reports {
-        xml.enabled = true // coveralls plugin depends on xml format report
-        html.enabled = true
-    }
-}
-
-repositories {
-        
-     maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
-     maven { url "http://repo.maven.apache.org/maven2" }
-}
-
-dependencies {
-    compile(group: 'org.spigotmc', name: 'spigot-api', version:'1.11.2-R0.1-SNAPSHOT') {
-       /* This dependency was originally in the Maven provided scope, but the project was not of type war.
-       This behavior is not yet supported by Gradle, so this dependency has been converted to a compile dependency.
-       Please review and delete this closure when resolved. */
-    }
-    compile(group: 'org.bukkit', name: 'bukkit', version:'1.11.2-R0.1-SNAPSHOT') {
-       /* This dependency was originally in the Maven provided scope, but the project was not of type war.
-       This behavior is not yet supported by Gradle, so this dependency has been converted to a compile dependency.
-       Please review and delete this closure when resolved. */
+        xml.enabled = true
+        csv.enabled = false
+        html.destination "${buildDir}/jacocoHtml"
     }
 }
