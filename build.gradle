@@ -2,6 +2,10 @@ apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'jacoco'
 
+plugins {
+    id 'com.github.kt3k.coveralls' version '2.6.3'
+}
+
 group = 'me.thepooe'
 version = '0.0.1-SNAPSHOT'
 
@@ -13,10 +17,6 @@ tasks.withType(JavaCompile) {
 	options.encoding = 'UTF-8'
 }
 
-plugins {
-    id 'jacoco'
-    id 'com.github.kt3k.coveralls' version '2.6.3'
-}
 
 jacocoTestReport {
     reports {
@@ -24,6 +24,7 @@ jacocoTestReport {
         html.enabled = true
     }
 }
+
 repositories {
         
      maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
