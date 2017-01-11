@@ -1,5 +1,7 @@
 # Petto
 
+![img](https://travis-ci.org/ThePooE/petto.svg?branch=dev)
+
 ペット (Petto) is a bukkit plugin which create your ultimatium companion. Supporting both singleplayer and multiplayers.
 
 ## Current Features
