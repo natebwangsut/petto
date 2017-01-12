@@ -8,8 +8,12 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class Petto extends JavaPlugin {
 
-    private boolean isEnabled = true;
+    private boolean enabled = true;
     private FileConfiguration config = this.getConfig();
+
+    public Petto() {
+        //nothing
+    }
 
     @Override
     public void onEnable() {
@@ -20,12 +24,16 @@ public class Petto extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new ListenerPetto(), this);
 
-        this.isEnabled = true;
+        this.enabled = true;
         this.getCommand("petto").setExecutor(new CommandPetto());
     }
 
     @Override
     public void onDisable() {
-        this.isEnabled = false;
+        this.enabled = false;
+    }
+
+    public boolean isPluginEnabled() {
+        return this.enabled;
     }
 }
