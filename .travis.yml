@@ -1,6 +1,6 @@
-language: java
+language: main
 
 jdk: oraclejdk8
 
 after_success:
-  - mvn clean test jacoco:report coveralls:report
+  - mvn clean test jacoco:prepare-agent jacoco:report
