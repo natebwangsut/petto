@@ -2,13 +2,5 @@ language: java
 
 jdk: oraclejdk8
 
-env:
-  global:
-    - secure: JsDfp5x2hONxczddgaAVG9Of1yDrjTF9JW2gTZ5BGyltkXYfEiy7xTe5NcWmlqDaji0PV50qwXQLm6EkoWcKNd1kgVapvHt5yavw6ZvMcLzNZbZ/e7hNh4iBJLUbdZ11wpARr5qeyOzm2twAa7z5aKcAGXcIclep+6nFGc0zHRLfyX+M0518bAvpOFaySewZK0f0Q8Xdbgidk6eCOrLLB7+OcRNWcQTjHl2ruFZ6hBFvaxujUBpurotwQjLOulQlZIRWWF1Ki+c3BHFYmtpTJmF1MPDm4HN8OdHMY2VMU62N879nkn6jXzE5nrM6jhTzva8RZNMKL4oan2h5017b1iiXHMgUiHCWx8BCob2Zh2s9gMWN1tkQ0SQE5R4i0rVdidOYDZLsLLbG2vHJVoSSkoUoVoecichgTmkjdMk87FbZiH+qrJ/1+akT7B/wcOTUQ0VYlf2S/4fYUJff7S5sGezESYYbcjrmyxoBZ8k3J7P1ULKJm1sSQj79VCWWArP4VfJEGD5enjSviIhW/tCjIRvQkfT0R+n2y82beZtdf/NGbS2voRMOkhZx0dh2UF5uzSBMNaAKk+DOUFSJZNdlGdo/Jj7wr/wm7qA4d8u+yfd2u2VlnJEyGsqlfb9TAVV8l7V/mBmQED/XSLlcf2Mk9C352pQVKIJZTh458QBZCtI=
-
-script:
-  - mvn test
-  - mvn verify
-
 after_success:
   - mvn clean test jacoco:report coveralls:report
