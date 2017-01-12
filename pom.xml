@@ -48,24 +48,6 @@
     </dependencies>
 
     <build>
-        <directory>${project.basedir}/target</directory>
-        <outputDirectory>${project.build.directory}/classes</outputDirectory>
-        <finalName>${project.artifactId}-${project.version}</finalName>
-        <testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
-
-        <sourceDirectory>${project.basedir}/src/me/thepooe/petto</sourceDirectory>
-        <scriptSourceDirectory>src/me/thepooe/petto/scripts</scriptSourceDirectory>
-        <testSourceDirectory>${project.basedir}/src/me/thepooe/petto/test</testSourceDirectory>
-        <resources>
-            <resource>
-                <directory>${project.basedir}/src/me/thepooe/petto/resources</directory>
-            </resource>
-        </resources>
-        <testResources>
-            <testResource>
-                <directory>${project.basedir}/src/me/thepooe/petto/test/resources</directory>
-            </testResource>
-        </testResources>
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>

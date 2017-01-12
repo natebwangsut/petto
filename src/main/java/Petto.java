@@ -1,4 +1,4 @@
-package me.thepooe.petto;
+package main.java;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;

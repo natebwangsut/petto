@@ -1,4 +1,4 @@
-package me.thepooe.petto;
+package main.java;
 
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
