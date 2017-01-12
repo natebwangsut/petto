@@ -1,4 +1,4 @@
-package me.thepooe.petto.test;
+package me.thepooe.petto;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
