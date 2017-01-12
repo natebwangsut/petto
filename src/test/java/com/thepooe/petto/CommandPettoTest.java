@@ -1,4 +1,4 @@
-package test.java;
+package com.thepooe.petto;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

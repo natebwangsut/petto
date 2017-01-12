@@ -1,4 +1,4 @@
-package test.java;
+package com.thepooe.petto;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -50,7 +50,6 @@
     <build>
         <directory>out</directory>
         <finalName>${artifactId}-${version}</finalName>
-        <testSourceDirectory>test/test/java</testSourceDirectory>
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>

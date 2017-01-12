@@ -1,4 +1,4 @@
-package main.java;
+package com.thepooe.petto;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
