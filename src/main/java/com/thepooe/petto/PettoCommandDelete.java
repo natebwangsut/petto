@@ -6,15 +6,17 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 /**
- * Created by @ThePooE on 1/10/2017.
+ * Created by U6043820 on 1/13/2017.
  */
-public class CommandPetto implements CommandExecutor {
-
+public class PettoCommandDelete implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender usr, Command cmd, String label, String args[]) {
-        if (usr instanceof Player) {
-            Player player = (Player) usr;
-            usr.sendMessage("Hello, I'm Petto!");
+        if (cmd.getName().equalsIgnoreCase("petto")
+                && args[0].equalsIgnoreCase("delete")) {
+            if (usr instanceof Player) {
+                Player player = (Player) usr;
+            }
+            return true;
         }
         return true;
     }
