@@ -13,9 +13,6 @@ public class PettoCommandDelete implements CommandExecutor {
     public boolean onCommand(CommandSender usr, Command cmd, String label, String args[]) {
         if (cmd.getName().equalsIgnoreCase("petto")
                 && args[0].equalsIgnoreCase("delete")) {
-            if (usr instanceof Player) {
-                Player player = (Player) usr;
-            }
             return true;
         }
         return true;
