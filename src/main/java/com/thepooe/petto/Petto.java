@@ -11,10 +11,6 @@ public class Petto extends JavaPlugin {
     private boolean enabled = true;
     private FileConfiguration config = this.getConfig();
 
-    public Petto() {
-        //nothing
-    }
-
     @Override
     public void onEnable() {
         // Default Configurations

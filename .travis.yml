@@ -5,3 +5,6 @@ jdk: oraclejdk8
 after_success:
 - mvn clean test jacoco:report
 - bash <(curl -s https://codecov.io/bash)
+
+notification:
+  email: false
