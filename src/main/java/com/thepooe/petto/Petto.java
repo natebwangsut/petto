@@ -18,7 +18,7 @@ public class Petto extends JavaPlugin {
         config.options().copyDefaults(true);
         saveConfig();
 
-        getServer().getPluginManager().registerEvents(new ListenerPetto(), this);
+        getServer().getPluginManager().registerEvents(new PettoListener(), this);
 
         this.enabled = true;
         this.getCommand("petto").setExecutor(new CommandPetto());

@@ -9,7 +9,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 /**
  * Created by U6043820 on 1/11/2017.
  */
-public class ListenerPetto implements Listener {
+public class PettoListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {

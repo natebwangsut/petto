@@ -7,7 +7,7 @@ import org.bukkit.event.HandlerList;
 /**
  * Created by U6043820 on 1/11/2017.
  */
-public class EventPetto extends Event implements Cancellable {
+public class PettoEvent extends Event implements Cancellable {
 
     // Back-ends
     private static final HandlerList HANDLERS = new HandlerList();
@@ -15,7 +15,7 @@ public class EventPetto extends Event implements Cancellable {
     private final String playerName;
     private boolean isCancelled;
 
-    public EventPetto(String playerName) {
+    public PettoEvent(String playerName) {
         this.playerName = playerName;
     }
 
