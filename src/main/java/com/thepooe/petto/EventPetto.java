@@ -9,6 +9,9 @@ import org.bukkit.event.HandlerList;
  */
 public class EventPetto extends Event implements Cancellable {
 
+    // Back-ends
+    private static final HandlerList HANDLERS = new HandlerList();
+
     private final String playerName;
     private boolean isCancelled;
 
@@ -20,13 +23,9 @@ public class EventPetto extends Event implements Cancellable {
         return this.playerName;
     }
 
-    // Back-ends
-    private static final HandlerList HANDLERS = new HandlerList();
-
     public HandlerList getHandlers() {
         return HANDLERS;
     }
-
     public static HandlerList getHandlersList() {
         return HANDLERS;
     }

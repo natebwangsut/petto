@@ -1,7 +1,5 @@
 package com.thepooe.petto;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -10,14 +8,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 class CommandPettoTest {
 
-    @Test
+    @org.junit.jupiter.api.Test
     void blankTest() {
         assertEquals(2, 1+1);
     }
 
-    @Test
-    void onCommand() {
-        assertTrue(true);
-    }
+    @org.junit.jupiter.api.Test
+    void onCommand() {}
 
 }
