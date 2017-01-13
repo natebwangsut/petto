@@ -30,33 +30,32 @@ public class PettoCommandCreate implements CommandExecutor {
     public boolean onCommand(CommandSender usr, Command cmd, String label, String args[]) {
 
         String commandReceiver = args[0];
+        String petType = args[1];
 
         // Check if the command is correctly used
         if (cmd.getName().equalsIgnoreCase("petto")
                 && label.equalsIgnoreCase("create")) {
 
+            Player player = null;
+            EntityType pet;
+
+            pet = EntityType.valueOf(petType.toUpperCase());
+
             // If the command is being executed from player
             if (usr instanceof Player) {
-                try {
-                    return summonPet((Player) usr, EntityType.WOLF);
-                } catch (Exception e) {
-                    usr.sendMessage("[ERROR]: Cannot summon the pet");
-                    return false;
-                }
+                player = (Player) usr;
             }
-
             // If the command is being executed from console
-            if (usr instanceof ConsoleCommandSender) {
+            else if (usr instanceof ConsoleCommandSender) {
                 // Try to parse the String into Player class
-                Player player;
                 try {
                     player = Bukkit.getServer().getPlayer(commandReceiver);
                 } catch (Exception e) {
                     usr.sendMessage("[ERROR]: Cannot find the player " + commandReceiver + ".");
-                    return true;
+                    return false;
                 }
-                return summonPet(player, EntityType.WOLF);
             }
+            return summonPet(player, pet);
         }
         // Not entering any loop, exiting false
         return false;
@@ -84,7 +83,7 @@ public class PettoCommandCreate implements CommandExecutor {
                 x,
                 playerWorld.getHighestBlockYAt(playerLocation),
                 z);
-        L.getWorld().spawnEntity(L, EntityType.WOLF);
+        L.getWorld().spawnEntity(L, petType);
         return true;
     }
 }
