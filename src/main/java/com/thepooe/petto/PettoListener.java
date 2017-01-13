@@ -13,7 +13,7 @@ public class PettoListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        event.setJoinMessage("Welcome, " + event.getPlayer().getName() + "!");
+        event.getPlayer().sendMessage("Welcome, " + event.getPlayer().getName() + "!");
     }
 
     @EventHandler (priority = EventPriority.LOWEST)
