@@ -10,12 +10,18 @@ import org.bukkit.entity.Player;
  */
 public class PettoCommand implements CommandExecutor {
 
+    private final Petto petto;
+
+    public PettoCommand(Petto petto) {
+        this.petto = petto;
+    }
+
     @Override
     public boolean onCommand(CommandSender usr, Command cmd, String label, String args[]) {
-        if (usr instanceof Player) {
-            Player player = (Player) usr;
-            player.sendMessage("Hello, I'm Petto!");
+        if (cmd.getName().equalsIgnoreCase("petto")) {
+            usr.sendMessage("Hello, I'm Petto!");
+            return true;
         }
-        return true;
+        return false;
     }
 }

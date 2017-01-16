@@ -18,6 +18,7 @@ public class Petto extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        getLogger().info("Petto has been enabled.");
         // CreateFile
         createConfig();
         // Default Configurations
@@ -27,13 +28,13 @@ public class Petto extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new PettoListener(), this);
 
-        this.getCommand("petto").setExecutor(new PettoCommand());
+        this.getCommand("petto").setExecutor(new PettoCommand(this));
     }
 
     @Override
     public void onDisable() {
+        getLogger().info("Petto has been disabled.");
         // Do nothing
-
     }
 
     public FileConfiguration getPlayerConfig() {
