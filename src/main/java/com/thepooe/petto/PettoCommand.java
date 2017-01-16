@@ -18,10 +18,7 @@ public class PettoCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender usr, Command cmd, String label, String args[]) {
-        if (cmd.getName().equalsIgnoreCase("petto")) {
-            usr.sendMessage("Hello, I'm Petto!");
-            return true;
-        }
-        return false;
+        usr.sendMessage("Hello, I'm Petto!");
+        return true;
     }
 }

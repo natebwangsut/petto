@@ -61,7 +61,9 @@ public class Petto extends JavaPlugin {
         try {
             config.load(configf);
             player.load(playerf);
-        } catch (IOException | InvalidConfigurationException e) {
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InvalidConfigurationException e) {
             e.printStackTrace();
         }
 
