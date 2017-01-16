@@ -1,8 +1,9 @@
 name: Petto
 version: 0.0.1
-author: Nate B. Wangsutthitham (@ThePooE)
-lalaa: me.thepooe.petto.Petto
+author: Nate B. W. (@ThePooE)
+main: com.thepooe.petto.Petto
 website: github.com/thepooe/petto
+
 commands:
   petto:
     description: Say hello to Petto
@@ -10,5 +11,5 @@ commands:
   pettoCreate:
    description: Create a pet, leaving player blank default in the user of the command
    usage:
-    /petto create [type] [player]
-    e.g. /petto create wolf
+     /petto create [type] [player]
+     e.g. /petto create wolf

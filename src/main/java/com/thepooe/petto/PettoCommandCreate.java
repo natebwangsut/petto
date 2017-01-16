@@ -3,11 +3,8 @@ package com.thepooe.petto;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
+import org.bukkit.command.*;
 
-import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
@@ -46,7 +43,8 @@ public class PettoCommandCreate implements CommandExecutor {
                 player = (Player) usr;
             }
             // If the command is being executed from console
-            else if (usr instanceof ConsoleCommandSender) {
+            else if (usr instanceof ConsoleCommandSender
+                        || usr instanceof BlockCommandSender) {
                 // Try to parse the String into Player class
                 try {
                     player = Bukkit.getServer().getPlayer(commandReceiver);
